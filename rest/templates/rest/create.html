@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+{% load i18n %}
+
+{% trans "Services" %}
+
+{% block title %}Форма по добавлению ресторана{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Форма по добавлению ресторана</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.food }}<br>
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+            {{ form.tel }}<br>
+            {{ form.url }}<br>
+            {{ form.addr }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Добавить ресторан</button>
+        </form>
+    </div>
+{% endblock %}
